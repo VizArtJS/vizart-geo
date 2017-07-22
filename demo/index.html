@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: linear-gradient(to bottom right,#7753eb,#4264fb);
+            background: #e2e1e0;
+            text-align: center;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 2px;
+            display: inline-block;
+            height: 160px;
+            margin: 1rem;
+            position: relative;
+            width: 240px;
+            text-decoration: none;
+            color: black;
+        }
+
+        .card-1 {
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+        }
+
+        .card-1:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: -10px;
+            border-top: 1px solid #F1F1F1;
+            border-right: 1px solid #DEDEDE;
+            border-bottom: 2px solid rgb(177, 177, 177);
+            border-left: 1px solid #E5E5E5;
+            margin-top: 6px;
+            margin-bottom: 9px;
+            position: absolute;
+            background-color: white;
+            padding: 7px 10px;
+            max-width: 230px;
+        }
+
+    </style>
+</head>
+<body>
+<a class="card card-1" href="choropleth-cn.html">
+    <div class="title">Choropleth China</div>
+</a>
+<a class="card card-1" href="choropleth-us.html">
+    <div class="title">Choropleth US</div>
+</a>
+
+<a class="card card-1" href="mapbox-nyc.html">
+    <div class="title">NYC Pedcyc (Mapbox GL) </div>
+</a>
+
+
+<a class="card card-1" href="pixi-us-cities.html">
+    <div class="title">US Cities (PIXI 1000 marker)</div>
+</a>
+
+<a class="card card-1" href="pixi-french-t1.html">
+    <div class="title">French 2017 (PIXI 1st)</div>
+</a>
+<a class="card card-1" href="pixi-french-t2.html">
+    <div class="title">French 2017 (PIXI 2nd)</div>
+</a>
+
+<a class="card card-1" href="pixi-french-cities.html">
+    <div class="title">French Cities (PIXI 36700)</div>
+</a>
+
+
+
+<a class="card card-1" href="world-canvas.html">
+    <div class="title">World Canvas (65k) </div>
+</a>
+
+
+<a class="card card-1" href="world-mapbox.html">
+    <div class="title">World Mapbox (65k) </div>
+</a>
+<a class="card card-1" href="world-pixi.html">
+    <div class="title">World Pixi (65k) </div>
+</a>
+
+
+<a class="card card-1" href="force-map-svg.html">
+    <div class="title">Force Map SVG </div>
+</a>
+
+<a class="card card-1" href="force-map-canvas.html">
+    <div class="title">Force Map Canvas </div>
+</a>
+
+
+<a class="card card-1" href="force-map-pixi.html">
+    <div class="title">Force Map Pixi </div>
+</a>
+</body>
+</html>

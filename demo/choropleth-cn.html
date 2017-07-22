@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Choropleth</title>
+    <link href="./vizart-geo.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="./leaflet/leaflet.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="./leaflet/leaflet.js"></script>
+    <script src="./vizart-geo.standalone.js" type="text/javascript"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        #chart {
+            font-family: 'Merriweather Sans', sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            color: #4c4c4c;
+            fill: #4c4c4c;
+            text-align: center;
+            cursor: default;
+            height: 100%;
+        }
+
+        #chart text {
+            fill: black;
+            font-size: 16px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="chart">
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.getJSON('./geojson/china.geojson', function(geodata){
+            var chart = new VizArtGeo.Choropleth('#chart', {
+                data: {
+                    x:
+                        { name: 'province', type: 'string', accessor: 'province'}
+                    ,
+                    y: [
+                        { name: 'sales', type: 'number', accessor: 'sales'}
+                    ],
+                },
+                map: {
+                    center:[35.3349, 103.2319],
+
+                }
+            }, geodata);
+
+            d3.csv('./assets/sales_flow_cn.csv', function(data){
+                chart.render(data);
+            });
+        });
+
+    });
+
+</script>
+</body>
+</html>
