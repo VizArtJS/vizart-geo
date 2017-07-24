@@ -55,6 +55,7 @@ npm run dev         // view demos in web browser at localhost:3005
 npm run build       // build
 npm run test        // run tests only
 npm run test:cover  // run tests and view coverage report
+```
 
 ## API
 
