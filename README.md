@@ -22,7 +22,6 @@ import { Choropleth } from 'vizart-geo';
 const _map = new Choropleth(_domId, _opt)....
 ```
 
-```
 ## Three steps to use a chart
 1. initialize a chart with domId and declarative options
 ```
