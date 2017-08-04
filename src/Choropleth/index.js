@@ -1,6 +1,6 @@
-import { makeColorScale, uuid, check, mergeBase } from 'vizart-core';
+import { makeColorScale, uuid, check } from 'vizart-core';
 import { AbstractBasicCartesianChart, prepareCartesian, createCartesianOpt } from 'vizart-basic';
-import { select, mouse, selectAll } from 'd3-selection';
+import { select, mouse } from 'd3-selection';
 import { transition } from 'd3-transition';
 import { geoTransform, geoPath } from 'd3-geo';
 import L from 'leaflet';
