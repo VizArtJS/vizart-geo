@@ -27,9 +27,7 @@ export default {
         }),
         commonjs({
             namedExports: {
-                'node_modules/simple-statistics/index.js': [ 'ckmeans', 'equalIntervalBreaks' ],
                 'node_modules/leaflet': [ 'LatLng', 'Map', 'tileLayer'],
-
             }
         }),
         serve({
