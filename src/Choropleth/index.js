@@ -1,4 +1,4 @@
-import { NoMargin, makeColorScale, uuid, check, mergeBase } from 'vizart-core';
+import { makeColorScale, uuid, check, mergeBase } from 'vizart-core';
 import { AbstractBasicCartesianChart, prepareCartesian, createCartesianOpt } from 'vizart-basic';
 import { select, mouse, selectAll } from 'd3-selection';
 import { transition } from 'd3-transition';
@@ -14,7 +14,6 @@ import 'vizart-basic/dist/vizart-basic.css';
 const DefaultOptions = {
     chart: {
         type: 'choropleth',
-        margin: NoMargin
     },
     plots: {
         emptyDataColor: '#ffffff',
