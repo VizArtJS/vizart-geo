@@ -56,7 +56,7 @@ class Choropleth extends AbstractBasicCartesianChart {
         this._c = (d) => {
             return this._getMetricVal(d) === 0
                 ? this._options.plots.emptyDataColor
-                : this._colorScale(this._getMetricVal(d));
+                : this._color(this._getMetricVal(d));
         };
     }
 
@@ -64,7 +64,7 @@ class Choropleth extends AbstractBasicCartesianChart {
         this.data(_data);
 
         let _array = _data.map(this._getMetricVal);
-        this._colorScale = makeColorScale(this._options.color, _array);
+        this._color = makeColorScale(this._options.color, _array);
 
         let that = this;
 
