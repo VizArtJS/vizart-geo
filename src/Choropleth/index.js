@@ -1,4 +1,4 @@
-import { makeColorScale, uuid, check } from 'vizart-core';
+import { makeColorScale, uuid, check, Globals, MetroCold5 } from 'vizart-core';
 import { AbstractBasicCartesianChart, prepareCartesian, createCartesianOpt } from 'vizart-basic';
 import { select, mouse } from 'd3-selection';
 import { transition } from 'd3-transition';
@@ -23,6 +23,10 @@ const DefaultOptions = {
         strokeHighlight: '#8f8d8b',
         strokeWidth: 1.5,
         strokeWidthHighlight: 3
+    },
+    color: {
+        scheme: MetroCold5,
+        type: Globals.ColorType.GRADIENT
     },
     map: {
         tileLayer: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RhcmUiLCJhIjoiNGQxOGM0Yzk0ZjQ2ZjJhMGMyY2I3ZDBlYTEzNmJjM2MifQ.fBHV208tbilSeMaNQIa9zQ',
