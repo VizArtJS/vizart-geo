@@ -194,8 +194,8 @@ class Choropleth extends AbstractBasicCartesianChart {
 
     data(_data) {
         if (check(_data) === true) {
-            prepareCartesian(_data, this._options);
-            this._bindDataToGeo(_data);
+            let cartesianData = prepareCartesian(_data, this._options);
+            this._bindDataToGeo(cartesianData);
         }
 
         return this._data;
