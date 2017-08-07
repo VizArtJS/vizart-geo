@@ -1,5 +1,5 @@
 import { makeColorScale, uuid, check, Globals, MetroCold5 } from 'vizart-core';
-import { AbstractBasicCartesianChart, prepareCartesian, createCartesianOpt } from 'vizart-basic';
+import { AbstractBasicCartesianChart, processCartesianData, createCartesianOpt } from 'vizart-basic';
 import { select, mouse } from 'd3-selection';
 import { transition } from 'd3-transition';
 import { geoTransform, geoPath } from 'd3-geo';
@@ -194,7 +194,7 @@ class Choropleth extends AbstractBasicCartesianChart {
 
     data(_data) {
         if (check(_data) === true) {
-            let cartesianData = prepareCartesian(_data, this._options);
+            let cartesianData = processCartesianData(_data, this._options);
             this._bindDataToGeo(cartesianData);
         }
 
