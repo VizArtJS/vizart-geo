@@ -1,4 +1,4 @@
-import { makeColorScale, uuid, check, Globals, MetroCold5 } from 'vizart-core';
+import { genericColor, uuid, check, Globals, MetroCold5 } from 'vizart-core';
 import { AbstractBasicCartesianChart, processCartesianData, createCartesianOpt } from 'vizart-basic';
 import { select, mouse } from 'd3-selection';
 import { transition } from 'd3-transition';
@@ -68,7 +68,7 @@ class Choropleth extends AbstractBasicCartesianChart {
         this.data(_data);
 
         let _array = _data.map(this._getMetricVal);
-        this._color = makeColorScale(this._options.color, _array);
+        this._color = genericColor(this._options.color, _array);
 
         let that = this;
 
@@ -204,7 +204,7 @@ class Choropleth extends AbstractBasicCartesianChart {
     _provideColorScale() {
         let _array = this._data.features.map(this._getMetricVal);
 
-        return makeColorScale(this._options.color, _array);
+        return genericColor(this._options.color, _array);
     }
 
     transitionColor (colorOptions) {
