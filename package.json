@@ -1,6 +1,6 @@
 {
   "name": "vizart-geo",
-  "version": "0.7.6",
+  "version": "0.7.7",
   "description": "VizArt: Geo",
   "main": "dist/vizart-geo.js",
   "module": "dist/vizart-geo.mjs",
@@ -25,8 +25,8 @@
     "d3-geo": "^1.6.4",
     "d3-selection": "^1.1.0",
     "d3-transition": "^1.1.0",
-    "vizart-basic": "^0.7.5",
-    "vizart-core": "^0.9.8",
+    "vizart-basic": "^0.7.6",
+    "vizart-core": "^0.9.9",
     "hexgrid-heatmap": "^0.1.2",
     "leaflet": "^1.2.0",
     "leaflet-pixi-overlay": "0.0.6",
