@@ -31,7 +31,7 @@
     "leaflet": "^1.2.0",
     "leaflet-pixi-overlay": "0.0.6",
     "lodash-es": "^4.17.4",
-    "pixi.js": "^4.5.4",
+    "pixi.js": "^4.5.5",
     "viewport-mercator-project": "^4.1.1"
   },
   "devDependencies": {
@@ -52,7 +52,7 @@
     "rollup-plugin-local-resolve": "^1.0.7",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^0.5.4",
-    "rollup-plugin-serve": "^0.4.1",
+    "rollup-plugin-serve": "^0.4.2",
     "rollup-watch": "^4.3.1"
   },
   "repository": {
