@@ -9,7 +9,7 @@ import serve from 'rollup-plugin-serve';
 import json from 'rollup-plugin-json';
 
 export default {
-    entry: 'src/index.js',
+    input: 'src/index.js',
     plugins: [
         json({
             exclude: [ 'node_modules' ],
@@ -44,12 +44,12 @@ export default {
         })
     ],
     external: ['leaflet'],
-    targets: [
+    output: [
         {
-            dest: 'dist/vizart-geo.standalone.js',
+            file: 'dist/vizart-geo.standalone.js',
             format: 'umd',
-            moduleName: 'VizArtGeo',
-            sourceMap: true
+            name: 'VizArtGeo',
+            sourcemap: true
         }
     ]
 };
