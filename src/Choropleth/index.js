@@ -1,6 +1,6 @@
-import { NoMargin, makeColorScale, uuid, check, mergeBase } from 'vizart-core';
-import { AbstractBasicCartesianChart, prepareCartesian, createCartesianOpt } from 'vizart-basic';
-import { select, mouse, selectAll } from 'd3-selection';
+import { genericColor, uuid, check, Globals, MetroCold5 } from 'vizart-core';
+import { AbstractBasicCartesianChart, processCartesianData, createCartesianOpt } from 'vizart-basic';
+import { select, mouse } from 'd3-selection';
 import { transition } from 'd3-transition';
 import { geoTransform, geoPath } from 'd3-geo';
 import L from 'leaflet';
@@ -14,7 +14,6 @@ import 'vizart-basic/dist/vizart-basic.css';
 const DefaultOptions = {
     chart: {
         type: 'choropleth',
-        margin: NoMargin
     },
     plots: {
         emptyDataColor: '#ffffff',
@@ -24,6 +23,10 @@ const DefaultOptions = {
         strokeHighlight: '#8f8d8b',
         strokeWidth: 1.5,
         strokeWidthHighlight: 3
+    },
+    color: {
+        scheme: MetroCold5,
+        type: Globals.ColorType.GRADIENT
     },
     map: {
         tileLayer: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RhcmUiLCJhIjoiNGQxOGM0Yzk0ZjQ2ZjJhMGMyY2I3ZDBlYTEzNmJjM2MifQ.fBHV208tbilSeMaNQIa9zQ',
@@ -57,7 +60,7 @@ class Choropleth extends AbstractBasicCartesianChart {
         this._c = (d) => {
             return this._getMetricVal(d) === 0
                 ? this._options.plots.emptyDataColor
-                : this._colorScale(this._getMetricVal(d));
+                : this._color(this._getMetricVal(d));
         };
     }
 
@@ -65,7 +68,7 @@ class Choropleth extends AbstractBasicCartesianChart {
         this.data(_data);
 
         let _array = _data.map(this._getMetricVal);
-        this._colorScale = makeColorScale(this._options.color, _array);
+        this._color = genericColor(this._options.color, _array);
 
         let that = this;
 
@@ -191,8 +194,8 @@ class Choropleth extends AbstractBasicCartesianChart {
 
     data(_data) {
         if (check(_data) === true) {
-            prepareCartesian(_data, this._options);
-            this._bindDataToGeo(_data);
+            let cartesianData = processCartesianData(_data, this._options);
+            this._bindDataToGeo(cartesianData);
         }
 
         return this._data;
@@ -201,7 +204,7 @@ class Choropleth extends AbstractBasicCartesianChart {
     _provideColorScale() {
         let _array = this._data.features.map(this._getMetricVal);
 
-        return makeColorScale(this._options.color, _array);
+        return genericColor(this._options.color, _array);
     }
 
     transitionColor (colorOptions) {
