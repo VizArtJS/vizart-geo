@@ -1,8 +1,23 @@
-import { genericColor, uuid, check, Globals, MetroCold5 } from 'vizart-core';
-import { AbstractBasicCartesianChart, processCartesianData, createCartesianOpt } from 'vizart-basic';
-import { select, mouse } from 'd3-selection';
-import { transition } from 'd3-transition';
-import { geoTransform, geoPath } from 'd3-geo';
+import {
+    genericColor,
+    uuid,
+    check,
+    Globals,
+    MetroCold5
+} from 'vizart-core';
+import {
+    AbstractBasicCartesianChart,
+    processCartesianData,
+    createCartesianOpt
+} from 'vizart-basic';
+import {
+    select,
+    mouse
+} from 'd3-selection';
+import {
+    geoTransform,
+    geoPath
+} from 'd3-geo';
 import L from 'leaflet';
 import find from 'lodash-es/find';
 import cloneDeep from 'lodash-es/cloneDeep';
@@ -121,7 +136,7 @@ class Choropleth extends AbstractBasicCartesianChart {
             .attr('stroke-width', this._options.plots.strokeWidth)
             .attr('fill', this._c);
 
-        let reset = ()=> {
+        const reset = ()=> {
             let bounds = path.bounds(this._data);
             let topLeft = bounds[0];
             let bottomRight = bounds[1];
@@ -159,9 +174,6 @@ class Choropleth extends AbstractBasicCartesianChart {
         })
 
     }
-
-
-
 
     _bindDataToGeo(rawData) {
         for (let d of this._data.features) {
