@@ -4,7 +4,6 @@
 * [Documentation](https://github.com/VizArtJS/vizart-geo/wiki)
 
 
-
 ## Usage:
 
 1. Install
@@ -59,27 +58,7 @@ npm run test:cover  // run tests and view coverage report
 
 ## API
 
-* [Choropleth](#choropleth)
-
-### Choropleth
-[<img alt="Choropleth" src="https://github.com/vizartjs/vizartjs.github.io/blob/master/img/charts/choropleth.jpg">](https://vizartjs.github.io/choropleth.html)
-```javascript
-import { Choropleth } from 'vizart-geo';
-import 'vizart-geo/dist/vizart-geo.css';
-
-let chart = Choropleth('#chart', {
-	data: {
-		x: { name: 'states', type: 'string', accessor: 'name'} ,
-		y: [ { name: 'sales', type: 'number', accessor: 'sales'} ],
-	}
-});
-
-d3.json('./data/sales_us.json', function(data){
-	chart.render(data);
-});
-```
-
-
+* [Choropleth](https://github.com/VizArtJS/vizart-geo/wiki/choropleth)
 
 ## License
 
