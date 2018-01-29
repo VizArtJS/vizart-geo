@@ -1,6 +1,6 @@
 {
   "name": "vizart-geo",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "VizArt: Geo",
   "main": "dist/vizart-geo.js",
   "module": "dist/vizart-geo.mjs",
@@ -24,10 +24,10 @@
   ],
   "dependencies": {
     "d3-geo": "^1.9.1",
-    "d3-selection": "^1.2.0",
+    "d3-selection": "^1.3.0",
     "d3-transition": "^1.1.1",
-    "vizart-basic": "^1.1.7",
-    "vizart-core": "^1.2.1",
+    "vizart-basic": "^1.1.8",
+    "vizart-core": "^1.2.2",
     "lodash-es": "^4.17.4"
   },
   "devDependencies": {
@@ -41,9 +41,9 @@
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^5.0.0",
     "prettier": "1.10.2",
-    "rollup": "^0.55.0",
+    "rollup": "^0.55.1",
     "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-livereload": "^0.6.0",
     "rollup-plugin-local-resolve": "^1.0.7",
