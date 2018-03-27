@@ -26,8 +26,7 @@
     "d3-geo": "^1.9.1",
     "d3-selection": "^1.3.0",
     "d3-transition": "^1.1.1",
-    "vizart-basic": "^1.1.8",
-    "vizart-core": "^1.2.2"
+    "vizart-core": "^2.0.0-rc.5"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

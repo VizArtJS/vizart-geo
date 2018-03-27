@@ -1,3 +1,3 @@
 export { version } from '../package.json';
 
-export { default as Choropleth } from './Choropleth';
+export { default as choropleth } from './choropleth';
