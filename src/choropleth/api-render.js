@@ -25,7 +25,7 @@ const apiRender = state => ({
 
     const { _color } = state;
 
-    state._c = d =>
+    const _c = d =>
       _getMetricVal(d) === 0
         ? _options.plots.emptyDataColor
         : _color(_getMetricVal(d));
@@ -82,12 +82,12 @@ const apiRender = state => ({
       .attr('fill-opacity', _options.plots.fillOpacity)
       .attr('stroke', _options.plots.stroke)
       .attr('stroke-width', _options.plots.strokeWidth)
-      .attr('fill', state._c);
+      .attr('fill', _c);
 
     const reset = () => {
-      let bounds = path.bounds(_data);
-      let topLeft = bounds[0];
-      let bottomRight = bounds[1];
+      const bounds = path.bounds(_data);
+      const topLeft = bounds[0];
+      const bottomRight = bounds[1];
 
       _svg
         .attr('width', bottomRight[0] - topLeft[0])
@@ -116,7 +116,7 @@ const apiRender = state => ({
         _tooltip
           .style('left', x < 40 ? x : x - 22 + 'px')
           .style('top', y < 40 ? y + 34 : y - 34 + 'px')
-          .html(tooltipMarkup(d, _options));
+          .html(tooltipMarkup(d, _options, _c));
       })
       .on('mouseout', function(d) {
         _tooltip.style('opacity', 0);

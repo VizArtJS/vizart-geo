@@ -1,8 +1,8 @@
-import { c, getDimensionVal, getMetric, getMetricVal } from './withCartesian';
+import { getDimensionVal, getMetric, getMetricVal } from './withCartesian';
 
-const tooltipMarkup = (d, state) =>
+const tooltipMarkup = (d, state, _c) =>
   `
-    <div class="tooltip-content" style="border-color: ${c(state)(d)};">
+    <div class="tooltip-content" style="border-color: ${_c(d)};">
         <div class="tooltip-header">${getDimensionVal(state)(d)}</div>
         <div class="tooltip-row">
             <div class="col">${getMetric(state).name} </div>
