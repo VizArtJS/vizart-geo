@@ -109,7 +109,7 @@ const apiRender = state => ({
       .on('mousemove', function(d) {
         _tooltip.style('opacity', 1);
 
-        let coordinates = mouse(this);
+        const coordinates = mouse(this);
         const x = coordinates[0];
         const y = coordinates[1];
 
@@ -118,9 +118,7 @@ const apiRender = state => ({
           .style('top', y < 40 ? y + 34 : y - 34 + 'px')
           .html(tooltipMarkup(d, _options, _c));
       })
-      .on('mouseout', function(d) {
-        _tooltip.style('opacity', 0);
-      });
+      .on('mouseout', () => _tooltip.style('opacity', 0));
   },
 });
 
