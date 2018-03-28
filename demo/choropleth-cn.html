@@ -44,7 +44,7 @@
 <script>
     $(document).ready(function () {
         $.getJSON('./geojson/china.geojson', function(geodata){
-            var chart = new VizArtGeo.Choropleth('#chart', {
+            var chart = VizArtGeo.choropleth('#chart', {
                 data: {
                     x:
                         { name: 'province', type: 'string', accessor: 'province'}
@@ -53,11 +53,12 @@
                         { name: 'sales', type: 'number', accessor: 'sales'}
                     ],
                 },
+                geojson: geodata,
                 map: {
                     center:[35.3349, 103.2319],
 
                 }
-            }, geodata);
+            });
 
             d3.csv('./assets/sales_flow_cn.csv', function(data){
                 chart.render(data);
