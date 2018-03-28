@@ -58,9 +58,11 @@
   "keywords": [
     "ES6",
     "VizArt",
+    "D3V4",
+    "Chorolpleth",
     "Data Visualization"
   ],
   "author": "Xing Yun",
   "license": "MIT",
-  "homepage": "www.vizart.org"
+  "homepage": "https://vizartjs.github.io"
 }
