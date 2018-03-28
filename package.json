@@ -1,6 +1,6 @@
 {
   "name": "vizart-geo",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "VizArt: Geo",
   "main": "dist/vizart-geo.js",
   "module": "dist/vizart-geo.mjs",
@@ -26,7 +26,7 @@
     "d3-geo": "^1.10.0",
     "d3-selection": "^1.3.0",
     "d3-transition": "^1.1.1",
-    "vizart-core": "^2.0.0-rc.6"
+    "vizart-core": "^2.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

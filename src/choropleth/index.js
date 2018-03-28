@@ -37,7 +37,6 @@ const DefaultOptions = {
     scheme: MetroCold5,
     type: Globals.ColorType.GRADIENT,
   },
-  geojson: UsGEO,
   map: {
     tileLayer:
       'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic3RhcmUiLCJhIjoiNGQxOGM0Yzk0ZjQ2ZjJhMGMyY2I3ZDBlYTEzNmJjM2MifQ.fBHV208tbilSeMaNQIa9zQ',
@@ -54,9 +53,9 @@ const DefaultOptions = {
 const composers = {
   opt: DefaultOptions,
   data: (data, opt) => {
-    const { geojson = UsGEO } = opt;
+    const geo = Object.assign({}, opt.geojson ? opt.geojson : UsGEO);
 
-    for (let d of geojson.features) {
+    for (let d of geo.features) {
       const province = d.properties.name;
       const datum = data.find(
         cDatum => getDimensionVal(opt)(cDatum) === province
@@ -70,7 +69,7 @@ const composers = {
 
       d[getDimension(opt).accessor] = province;
     }
-    return geojson;
+    return geo;
   },
 
   color: (colorOpt, data, opt) => {
