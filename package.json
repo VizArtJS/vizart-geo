@@ -1,6 +1,6 @@
 {
   "name": "vizart-geo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "VizArt: Geo",
   "main": "dist/vizart-geo.js",
   "module": "dist/vizart-geo.esm.js",
